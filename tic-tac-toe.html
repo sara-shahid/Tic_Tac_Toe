@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-[#0B1929] flex items-center justify-center p-4 text-white">
+
+  <main class="w-full max-w-md text-center">
+    <h1 class="text-4xl font-bold mb-2">Tic Tac Toe</h1>
+    <p class="text-slate-400 mb-8">Two players, one board!</p>
+
+    <div class="flex justify-between gap-4 mb-6">
+      <div id="playerX" class="flex-1 rounded-xl border-2 border-green-400 bg-[#17344D] p-4">
+        <p class="text-slate-300 text-sm">Player 1</p>
+        <p class="text-2xl font-bold text-green-400">X</p>
+      </div>
+      <div id="playerO" class="flex-1 rounded-xl border-2 border-slate-600 bg-[#17344D] p-4">
+        <p class="text-slate-300 text-sm">Player 2</p>
+        <p class="text-2xl font-bold text-orange-400">O</p>
+      </div>
+    </div>
+
+    <p id="status" class="text-lg font-semibold mb-5">Player X's turn</p>
+
+    <div id="board" class="grid grid-cols-3 gap-3">
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+    </div>
+
+    <button id="restart" class="mt-7 w-full rounded-xl bg-sky-500 py-3 font-semibold text-slate-950 hover:bg-sky-400 transition">
+      Restart Game
+    </button>
+  </main>
+
+  <script src="script.js"></script>
+  <style>
+    .cell {
+      aspect-ratio: 1;
+      border-radius: 0.75rem;
+      background: #17344D;
+      font-size: 3rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+
+    .cell:hover:empty {
+      background: #234762;
+    }
+
+    .cell.x {
+      color: #4ADE80;
+    }
+
+    .cell.o {
+      color: #FB923C;
+    }
+
+    .cell.winner {
+      background: #166534;
+    }
+
+    .cell:focus-visible {
+      outline: 2px solid #38BDF8;
+      outline-offset: 2px;
+    }
+  </style>
+</body>
+</html>
